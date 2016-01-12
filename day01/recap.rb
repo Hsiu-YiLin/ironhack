@@ -70,7 +70,7 @@ elsif input == 5
 elsif input == 6
 	puts "Here is the average price"
 	average_price = homes.reduce(0.0) {|sum, home| sum + home.price}
-	puts average_price/
+	puts average_price/homes.length
 
 elsif input == 7
 	puts "Enter a price for how much you want to pay"

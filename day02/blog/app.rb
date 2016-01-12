@@ -20,7 +20,7 @@ blog.publish_front_page
 #Add Pagination
 puts "Enter NEXT to continue"
 user = gets.chomp.to_s.downcase	
-while user == "next"
+while user 
 puts "Yes"
 
 end

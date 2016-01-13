@@ -11,9 +11,3 @@ counter.add_car(car2)
 
 puts "Total number of wheels for all vehicles"
 puts counter.wheel_count 
-
-
-
-
-
-

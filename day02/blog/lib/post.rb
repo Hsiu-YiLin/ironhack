@@ -11,3 +11,4 @@ class Post
 	# 	return "Post #{@title} #{@date}\n******\n #{@text}\n ------ \n\n"
 	# end
 end
+

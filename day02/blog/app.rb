@@ -17,10 +17,19 @@ blog.add_post_to_container Post.new("title 9", 20160109, "some text9", true)
 
 blog.publish_front_page
 
-#Add Pagination
-puts "Enter NEXT to continue"
-user = gets.chomp.to_s.downcase	
-while user 
-puts "Yes"
+#Time
+Time.new(1990,0,0)
 
-end
+#Add Pagination
+# puts "Enter NEXT to continue"
+# user = gets.chomp.to_s.downcase	
+# while user 
+# puts "Yes"
+
+# end
+
+
+
+#ceiling
+
+

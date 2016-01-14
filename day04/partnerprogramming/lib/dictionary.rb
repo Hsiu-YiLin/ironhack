@@ -1,4 +1,0 @@
-module DictionaryCheck
-
-	def 
-end

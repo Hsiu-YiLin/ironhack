@@ -48,3 +48,4 @@ p black_pawn2.move?(2,8)
 p black_pawn2.move?(2,6)
 p black_pawn2.move?(3,6)
 p black_pawn2.move?(3,8)
+

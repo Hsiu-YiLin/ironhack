@@ -11,6 +11,8 @@ class Pawn
 	puts dy
 	if (dx == 0 && dy == 1) || ((@color == "black") && (dx == 0 && dx == -1)) 
 		true
+		elsif (dx == 0 && dy.abs == 2)
+				true
 		else
 				false
 		end

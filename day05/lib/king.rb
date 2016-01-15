@@ -3,8 +3,6 @@ class King
 		@pos_x = pos_x
 		@pos_y = pos_y
 		@color = color
-
-	 	
 	end 
 
 	def move?(dest_x, dest_y)

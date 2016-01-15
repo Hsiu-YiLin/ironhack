@@ -2,6 +2,7 @@ require_relative("lib/king.rb")
 require_relative("lib/rook.rb")
 require_relative("lib/bishop.rb")
 require_relative("lib/knight.rb")
+require_relative("lib/queen.rb")
 
 white_king = King.new(5, 1, "white")
 black_king= King.new(5, 8, "black")
@@ -21,6 +22,7 @@ white_knight_right =  Knight.new(7, 1, "white")
 black_knight_left = Knight.new(2, 8, "black") 
 black_knight_right = Knight.new(7, 8, "black")
 
-p white_knight_left.move?(1, 3)
-p white_knight_left.move?(3, 3)
-p white_knight_left.move?(4, 2)
+white_queen = Queen.new(4, 1, "white")
+black_queen = Queen.new(4, 8, "black")
+
+

@@ -4,6 +4,7 @@ require_relative("lib/bishop.rb")
 require_relative("lib/knight.rb")
 require_relative("lib/queen.rb")
 require_relative("lib/pawn.rb")
+require_relative("lib/chessboard.rb")	
 
 white_king = King.new(5, 1, "white")
 black_king= King.new(5, 8, "black")
@@ -44,8 +45,12 @@ black_pawn6 = Pawn.new(6, 7, "black")
 black_pawn7 = Pawn.new(7, 7, "black")
 black_pawn8 = Pawn.new(8, 7, "black")
 
-p black_pawn2.move?(2,8)
-p black_pawn2.move?(2,6)
-p black_pawn2.move?(3,6)
-p black_pawn2.move?(3,8)
+chessboard = Chessboard.new 
+
+p chessboard.initial_chessboard(IO.read("lib/initialsetup.txt"))
+#chessboard.initial_chessboard(IO.read("lib/initialsetup.txt"))
+
+chessboard.print
+
+puts (1..8).to_a
 

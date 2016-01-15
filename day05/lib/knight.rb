@@ -1,4 +1,4 @@
-class Bishop
+class Knight
 	def initialize(pos_x, pos_y, color)
 		@pos_x = pos_x
 		@pos_y = pos_y
@@ -10,7 +10,7 @@ class Bishop
 		dy = (dest_y - @pos_y).abs
 		puts dx
 		puts dy
-		if dx==dy
+		if (dx== 1 && dy==2) || (dx==2 && dy ==1)
 			true
 				else
 					false

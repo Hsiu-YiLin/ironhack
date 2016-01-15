@@ -47,10 +47,8 @@ black_pawn8 = Pawn.new(8, 7, "black")
 
 chessboard = Chessboard.new 
 
-p chessboard.initial_chessboard(IO.read("lib/initialsetup.txt"))
+chessboard.initial_chessboard(black_pawn1)
+	# IO.read("lib/initialsetup.txt"))
 #chessboard.initial_chessboard(IO.read("lib/initialsetup.txt"))
 
-chessboard.print
-
-puts (1..8).to_a
 

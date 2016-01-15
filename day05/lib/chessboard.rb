@@ -10,28 +10,33 @@ class Chessboard
 	def initialize
 		@chessboardpieces = []
 		# @chessboardpieces.push(chess_piece)
-		@chessboard = []
+		@chessboard = Array.new(9,Array.new(9, "--"))
 
 	end
 
 	def initial_chessboard(chess_piece)
-		(1..8).to_an
+		
+		# @chessboard[chess_piece.pos_x][chess_piece.pos_y] = chess_piece.start 
+
+		
 		#@chessboard = chess_piece.start
 	# 	@chessboard = [:i][:y]
 	# end
 
-	# 	x=chess_piece.pos_x
-	# 	y=chess_piece.pos_y
-	# 	@chessboard[x][y] = chess_piece.start
+		x=chess_piece.pos_x
+		y=chess_piece.pos_y
+		puts @chessboard[x][y] = chess_piece.start
 		
 	end
 
 	def print
+
+
 		# string = ""
 		# 1.upto(8) {|i| puts " \n "
 		# 	1.upto(8) {|y| string += @chessboard[i][y]}
 		# }
 		# string
-		# puts @chessboard[1][7].inspect
+		puts @chessboard[1][7].inspect
 	end
 end

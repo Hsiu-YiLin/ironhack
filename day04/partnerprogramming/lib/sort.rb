@@ -9,25 +9,36 @@ class Sort
 
 	def sort
 		
-		while (@newword != @word2)
-			num = 0	
+		while @newword != @word2
+			num = 0
+			try_num = 0
+			failed_num = 0	
 			while num < @word1.length
+
 				if @word1[num] == @word2[num]
 					@newword[num] = @word2[num]
-									
+								
 				else
-					@letterold=@word1[num]
+					try_num +=1
+					@letterold = @word1[num]
 					@newword[num] = @word2[num]
 					
 						if @dictionary.exists?(@newword) == true
 						puts @newword
+												
 						else
 						@newword[num]=@letterold
+						failed_num +=1
 						end
 				end
+
 			num += 1
 			end		
-		sort
+			
+		if failed_num == try_num
+			puts "No can do."
+			break
+		end
 		end
 	end
 end

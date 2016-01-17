@@ -5,12 +5,12 @@ dictionary = Dictionary.from_file('/Users/hsiu-yilin/Dropbox/ironhack/day04/part
 #p dictionary.exists?("bees")
 
 puts "Please enter the first word"
-word1 = "copy"
+word1 = "pasta"
 
 #word1 = soda
 
 puts "Please enter the second word"
-word2 = "code"
+word2 = "light"
 
 puts "----------------"
 

@@ -49,6 +49,7 @@ chessboard = Chessboard.new
 
 chessboard.initial_chessboard(black_pawn1)
 	# IO.read("lib/initialsetup.txt"))
-#chessboard.initial_chessboard(IO.read("lib/initialsetup.txt"))
+#chessboard.initial_chessboard()
+puts IO.read("lib/initialsetup.txt")
 
 

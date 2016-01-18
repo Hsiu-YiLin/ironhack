@@ -4,7 +4,7 @@ require_relative("../lib/task.rb")
 describe Task do
   before :each do
     @task1 = Task.new("Do this")
-
+    
   end
 
 	describe "Increase task number" do
@@ -34,9 +34,19 @@ describe Task do
 
   describe "Time now" do
     it "Makes the time when task was created" do
-      now = Time.now
-      allow(Time).to receive(:now).and_return(now)
-      expect(@task1.created_at).to eq(now)
+      expect(@task1.created_at).to eq(Time.now)
+    end
+  end
+
+  describe "Update task content" do
+    it "Update task in content" do
+      expect(@task1.update_content!("NEW TASK")).to eq("NEW TASK")
+    end
+  end
+
+  describe "Time task was updated" do
+    it "Time at which task was updated" do
+      expect(@task1.updated_at).to eq(Time.now)
     end
   end
 end

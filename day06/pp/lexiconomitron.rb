@@ -24,16 +24,12 @@ class Lexiconomitron
 	end
 
 	def oompa_loompa(string_a)
-		string_a.select! do |w|
-			w.length < 4
-
-			
-		end
-		string_a.each do |w|
-		eat_t(w)
-
-		# new_string_a[i] = eat_t(w)
+		string_a.map! do |w|
+			eat_t(w)
 		end
 		
+		string_a.select! do |w|
+			w.length < 4			
+		end		
 	end
 end

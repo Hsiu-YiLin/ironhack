@@ -1,11 +1,4 @@
-class Bishop
-	attr_reader :pos_x, :pos_y, :color
-	def initialize(pos_x, pos_y, color)
-		@pos_x = pos_x
-		@pos_y = pos_y
-		@color = color
-	end 
-
+class Bishop < Piece
 	def start
 		if @color == "white"
 				"WB"

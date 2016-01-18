@@ -1,11 +1,4 @@
-class Rook
-	attr_reader :pos_x, :pos_y, :color
-	def initialize(pos_x, pos_y, color)
-		@pos_x = pos_x
-		@pos_y = pos_y
-		@color = color
-	end 
-
+class Rook < Piece	
 	def start
 		if @color == "white"
 				"WR"
@@ -18,7 +11,7 @@ class Rook
 		dx = (dest_x - @pos_x).abs
 		dy = (dest_y - @pos_y).abs
 
-		if (dx >= 0 && dy == 0)  || (dx == 0 && dy >=0)
+		if (dy == 0) || (dx == 0)
 				if @color == "white"
 				"WR"
 			else 

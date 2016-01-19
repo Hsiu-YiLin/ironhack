@@ -6,4 +6,5 @@ end
 
 get "/about" do
 	"MY PROFILE"
+	erb(:author)
 end

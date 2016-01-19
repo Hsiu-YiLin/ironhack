@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>YO Online CALCULATOR YO</title>
+</head>
+<body>
+	<h1>RESULT</h1>
+	<p>
+	<%= @string %> <%= @result %>
+	</p>
+<form action="/calculate" method="POST">
+
+<button type="submit" value = <%= @result %>>SAVE RESULT TO MEMORY</button>
+
+IO.write("../public/user_result.txt", <%= @result %>)  
+
+</form>
+
+</body>
+</html>

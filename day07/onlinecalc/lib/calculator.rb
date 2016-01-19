@@ -3,7 +3,7 @@ class Calculator
 		# one = num1.to_f
 		# two = num2.to_f
 		result = num1 + num2
-		"#{num1} + #{num2} = #{result}"
+		# "#{num1} + #{num2} = #{result}"
 	end
 
 	def subtract(num1, num2)

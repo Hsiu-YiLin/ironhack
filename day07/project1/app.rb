@@ -15,3 +15,9 @@ get "/hi" do
 	@str_time = time.strftime("YEAR: %Y: MONTH: %m DATE: %d")
 	erb(:hello)
 end
+
+get "/users/:username" do
+	@username = params[:username]
+	erb(:users)
+
+end

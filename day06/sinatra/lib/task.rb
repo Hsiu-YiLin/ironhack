@@ -1,5 +1,6 @@
 class Task
     attr_reader :content, :id, :complete
+
     @@current_id = 1
     def initialize(content)
     	@content = content

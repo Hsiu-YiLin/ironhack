@@ -1,6 +1,7 @@
 require "sinatra"
 require_relative("lib/calculator.rb")
 @@math = Calculator.new
+require "pry"
 
 get "/calculate" do
 	erb(:calculate)
@@ -27,11 +28,10 @@ post "/calculate" do
 		@two = params[:num2].to_f
 		@string = ""
 		@result
-
+		
 	if params[:operation] == "addition"
 		 @result = @@math.add(@one,@two)
 		 @string = "#{@one} + #{@two} = "
-		 
 	elsif params[:operation] == "subtraction"
 		@result = @@math.subtract(@one,@two)
 	elsif params[:operation] == "multiplication"
@@ -40,6 +40,13 @@ post "/calculate" do
 		@result = @@math.divide(@one,@two)
 	end
 	erb(:result)
+end
+
+post "/save" do
+	@stored_result = params[:operation]
+	binding.pry
+	IO.write("../public/user_result.txt", @stored_result)
+
 end
 
 

@@ -7,11 +7,10 @@
 	<p>
 	<%= @string %> <%= @result %>
 	</p>
-<form action="/calculate" method="POST">
+<form action="/save" method="POST">
 
-<button type="submit" value = <%= @result %>>SAVE RESULT TO MEMORY</button>
+<button type="submit" name = "operation" value = <%= @result %>>SAVE RESULT TO MEMORY</button>
 
-IO.write("../public/user_result.txt", <%= @result %>)  
 
 </form>
 

@@ -5,11 +5,8 @@ class PasswordChecker
 	end
 
 	def lengthcheck
-		if @password.length >= 7
-			true
-		else
-			false
-		end
+		@password.length >= 7
+		
 	end
 
 	def charactercheck

@@ -17,6 +17,8 @@ class TodoList
     def delete_task(number_task)
     	@tasks.delete_at(number_task)
     	@tasks
+
+    	
     end
 
     def find_task_by_id(task_id)

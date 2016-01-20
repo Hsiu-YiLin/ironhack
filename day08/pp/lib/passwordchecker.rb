@@ -22,6 +22,7 @@ class PasswordChecker
 	end
 
 	def userdomaincheck
+		
 		user = @email.split("@")
 		user2 = user[1].split(".")
 		p user[0]

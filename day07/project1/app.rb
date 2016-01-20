@@ -21,3 +21,11 @@ get "/users/:username" do
 	erb(:users)
 
 end
+
+get "/hours/ago/:hour" do
+	time = Time.now
+	@hour_num = params[:hour]
+	@time_hour_now = time.strftime("%H")
+	@result_hour = @time_hour_now.to_i - @hour_num.to_i
+	erb(:time_hour)
+end

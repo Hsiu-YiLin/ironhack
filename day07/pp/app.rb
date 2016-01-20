@@ -5,7 +5,7 @@ get "/ascii/?:word?/?:font?" do
 	@word = params[:word]
 	@font = params[:font]
 	if @font == nil
-		@font = "acrobatic"
+		@font = "slant"
 		else 
 			@font = params[:font]
 	end

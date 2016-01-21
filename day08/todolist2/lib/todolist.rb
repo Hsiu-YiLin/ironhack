@@ -1,4 +1,5 @@
-require 'yaml/store'
+require "yaml/store"
+require_relative("task.rb")
 
 class TodoList
 	attr_reader :tasks
@@ -6,7 +7,7 @@ class TodoList
     def initialize(user)
         @user = user
         @tasks = []
-        @todo_store = YAML::Store.new("../public/tasks.yml")
+        @todo_store = YAML::Store.new("./public/tasks.yml")
     end
 
     def add_task(task)
@@ -17,8 +18,6 @@ class TodoList
     def delete_task(number_task)
     	@tasks.delete_at(number_task)
     	@tasks
-
-    	
     end
 
     def find_task_by_id(task_id)
@@ -43,7 +42,16 @@ class TodoList
 	end
 	def save
 		@todo_store.transaction do 
-		@todo_store[@user] = @tasks
-	  	end
+			@todo_store[@user] = @tasks
+	  		end
+	end
+
+	def load_tasks
+		if @tasks == []
+			return add_task(Task.new("There's no tasks"))
+		else
+			return @tasks
+		end 
+		binding.pry
 	end
 end 

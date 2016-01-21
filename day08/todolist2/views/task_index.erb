@@ -1,0 +1,12 @@
+<h1>Here are your tasks</h1>
+
+<ul>
+<% @tasks.each do |task| %>
+	<li>
+	    <%= task %>
+	</li> 
+</ul>
+
+<% binding.pry %>
+
+<a href="/new_task">Add a new task</a>

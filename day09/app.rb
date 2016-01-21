@@ -4,10 +4,10 @@ require "pry"
 require_relative("lib/post.rb")
 require_relative("lib/blog.rb")
 
-post = Post.new("Title1", Time.new(2016, 1, 1), "FIRST POST STUFF")
-post1 = Post.new("Post2", Time.new(2016, 2, 1), "SECOND POST STUFF")
-post2 = Post.new("Post3", Time.new(2016, 1, 16), "THIRD POST STUFF")
-post3 = Post.new("Post4", Time.new(2016, 1, 21), "FOURTH POST STUFF")
+post = Post.new("Title1", Time.new(2016, 1, 1), "FIRST POST STUFF","ME", "FUN")
+post1 = Post.new("Post2", Time.new(2016, 2, 1), "SECOND POST STUFF", "ME", "BUSINESS")
+post2 = Post.new("Post3", Time.new(2016, 1, 16), "THIRD POST STUFF", "ME", "ENTERTAINMENT")
+post3 = Post.new("Post4", Time.new(2016, 1, 21), "FOURTH POST STUFF", "ME", "FOOD")
 
 
 my_blog = Blog.new
@@ -56,6 +56,8 @@ end
 post "/make_post" do
 	title = params[:post_title]  
 	content = params[:post_content]
+	content = params[:author]
+	content = params[:category]
 	post = Post.new(title, Time.now, content)
 	my_blog.add_post(post)
 	redirect to("/")

@@ -4,6 +4,8 @@ class Post
 		@title = title
 		@date = date 
 		@text = text
+		@author = author
+		@category = category
 	end
 
 	# Put into view

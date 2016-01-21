@@ -1,0 +1,14 @@
+<h1>THIS IS A BLOG</h1>
+
+<ul>
+  <% @content.each_with_index do |post,index| %>
+    <li>
+      
+
+     <a href="/post_detail/<%= index %>"> <%= post.title %> </a>
+
+      
+      
+    </li>
+  <% end %>
+</ul>

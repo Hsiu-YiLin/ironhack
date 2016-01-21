@@ -3,10 +3,10 @@
 <ul>
 <% @tasks.each do |task| %>
 	<li>
-	    <%= task %>
+	    <%= task.content %>
 	</li> 
 </ul>
 
-<% binding.pry %>
+
 
 <a href="/new_task">Add a new task</a>

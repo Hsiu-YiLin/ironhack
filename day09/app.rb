@@ -36,7 +36,6 @@ my_blog.add_post(post3)
 
 get "/" do
 	@content = my_blog.return_latest_posts
-	binding.pry
 	erb :homepage	
 end
 
@@ -45,7 +44,19 @@ get "/post_detail/:post_index" do
 	value = params[:post_index] # value = 0
 	@new_content = @content[value.to_i]
 	# binding.pry
-	erb(:post_index)
+	erb(:post)
 end
 
-get "/post_index"
+get "/create_post" do
+	erb(:create_post)
+end
+# get /:post_index"	
+# end
+
+post "/make_post" do
+	title = params[:post_title]  
+	content = params[:post_content]
+	post = Post.new(title, Time.now, content)
+	my_blog.add_post(post)
+	redirect to("/")
+end

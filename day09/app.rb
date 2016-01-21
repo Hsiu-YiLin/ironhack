@@ -56,9 +56,9 @@ end
 post "/make_post" do
 	title = params[:post_title]  
 	content = params[:post_content]
-	content = params[:author]
-	content = params[:category]
-	post = Post.new(title, Time.now, content)
+	author = params[:author]
+	category = params[:category]
+	post = Post.new(title, Time.now, content, author, category)
 	my_blog.add_post(post)
 	redirect to("/")
 end

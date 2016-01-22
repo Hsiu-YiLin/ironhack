@@ -4,12 +4,11 @@
 Test
 </p>
 
-<ul>
-	
-	<% @pass_array.each |movie| %>
-	<li> 
-	</%= movie.title %>
-	</li>
 
 
-</ul>
+	<% @pass_array.each do |movie| %><ul>
+
+<img src="<%= movie.poster %>">
+
+
+</ul><% end %>

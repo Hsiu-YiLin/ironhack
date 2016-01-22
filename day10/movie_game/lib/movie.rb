@@ -5,12 +5,13 @@ class Movie
 		attr_accessor :movie_array
 		def initialize
 			@movie_array = []
-			@new_array = []
+			
 		end
 
 		def imdb_scan(string)
 			movie_search = Imdb::Search.new(string)
 			@movie_array = movie_search.movies
+			@new_array = []
 		end
 
 		def get_array
@@ -29,6 +30,4 @@ class Movie
 		def random_question
 			answer = @new_array[rand(8)].year
 		end			
-
-
 end

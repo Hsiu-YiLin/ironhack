@@ -24,4 +24,11 @@ get "/movie_game/start" do
 	@answer = movies.random_question
 	erb(:movie_game_start)
 end
+
+get "/movie_game/question" do
+	erb(:movie_game_right)
+	end
 	
+get "/movie_game/wrong" do
+	erb(:movie_game_wrong)
+	end

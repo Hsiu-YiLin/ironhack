@@ -4,10 +4,12 @@
 
 <h2> Which movie was released in <%= @answer %>? </h2>
 
-<% @pass_array.each do |movie| %>
+<% @pass_array.each_with_index do |movie, index| %>
 
 
 <img class="movie_poster" src="<%= movie.poster %>">
-<button type="submit">SUBMIT</button>
+<form action="/movie_game/question" name = "<%= @pass_array[i].year" method="get">
 
+<button type="submit">SUBMIT</button>
+</form>
 <% end %>

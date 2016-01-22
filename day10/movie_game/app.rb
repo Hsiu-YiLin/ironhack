@@ -26,9 +26,10 @@ get "/movie_game/start" do
 end
 
 get "/movie_game/question" do
+	if 
 	erb(:movie_game_right)
-	end
-	
-get "/movie_game/wrong" do
+	else
 	erb(:movie_game_wrong)
 	end
+end
+	

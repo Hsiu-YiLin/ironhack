@@ -22,7 +22,7 @@ describe "Testing get_array" do
 	it "Returns array with 9 elements with pictures" do
 		array1 = @array.imdb_scan("help")
 		array1 = @array.get_array
-	expect(array1.length).to eq(9)
-	end 
-end
+		expect(array1.length).to eq(9)
+		end 
+	end
 end

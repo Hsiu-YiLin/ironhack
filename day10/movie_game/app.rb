@@ -21,6 +21,7 @@ get "/movie_game/start" do
 
 	@pass_array = movies.get_array
 	# binding.pry
+	@answer = movies.random_question
 	erb(:movie_game_start)
 end
 	

@@ -1,14 +1,9 @@
 <h1> MOVIE GAME </h1>
 
-<p>
-Test
-</p>
+<h2> Which movie was released in <%= @answer %>? </h2>
 
-
-
-	<% @pass_array.each do |movie| %><ul>
+<% @pass_array.each do |movie| %><ul>
 
 <img src="<%= movie.poster %>">
-
 
 </ul><% end %>

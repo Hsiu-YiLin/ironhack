@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="/styles.css">
+
 <h1> MOVIE GAME </h1>
 
 <h2> Which movie was released in <%= @answer %>? </h2>
 
-<% @pass_array.each do |movie| %><ul>
+<% @pass_array.each do |movie| %>
 
-<img src="<%= movie.poster %>">
+<img class="movie_poster" src="<%= movie.poster %>">
 
-</ul><% end %>
+<% end %>

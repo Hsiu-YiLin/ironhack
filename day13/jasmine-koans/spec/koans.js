@@ -457,7 +457,7 @@ describe("the JavaScript language", function(){
         }
 
         var obj = new Obj();
-        //expect(obj.theName()).toBe();
+        expect(obj.theName()).toBe('bob');
     });
 
     it("may contain 'static' methods", function(){
@@ -472,7 +472,7 @@ describe("the JavaScript language", function(){
           return 22;
         };
 
-        //expect(Obj.someStaticMethod()).toBe();
+        expect(Obj.someStaticMethod()).toBe(22);
     });
 
     it("can have have methods in the prototype", function(){

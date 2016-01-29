@@ -1,0 +1,32 @@
+[
+    {
+      "question": "What is a infant whale commonly called?",
+      "answer": "calf",
+      "hint": "Same as a baby cow.",
+      "id": 0
+    }, 
+    {
+      "question": "In Roman mythology, Neptune is the equivalent to which Greek god?",
+      "answer": "poseidon",
+      "hint": "He has a trident.",
+      "id": 1
+    },
+   {
+      "question": "How many tentacles does a squid have?",
+      "answer": "10",
+      "hint": "100/10",
+      "id": 2
+    },
+    {
+      "question": "Which American state is nearest to the former Soviet Union?",
+      "answer": "alaska",
+      "hint": "Sarah Palin lives here.",
+      "id": 3
+    },
+    {
+      "question": "Which singer joined Mel Gibson in the movie Mad Max: Beyond The Thunderdome?",
+      "answer": "tina turner",
+      "hint": "What's love got to, got to do with it.",
+      "id": 4
+    }
+]

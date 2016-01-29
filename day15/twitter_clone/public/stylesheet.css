@@ -1,0 +1,17 @@
+.navbar {
+	max-height: 25px;
+}
+
+.navbar-default-new {
+	background-color: transparent; 
+	border-color: transparent;
+}
+
+.navbar-icon {
+	max-width: 20px;
+}
+
+.infobar {
+    width: 5%;
+	margin: auto; 
+}

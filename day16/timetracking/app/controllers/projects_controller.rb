@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-  	@projects = Project.limit(10)
-  	puts @projects
+  	@projects = Project.last_created_projects(10)
   	render "index"
   end
 end

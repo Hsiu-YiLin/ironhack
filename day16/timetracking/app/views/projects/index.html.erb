@@ -1,8 +1,10 @@
 <h1>Projects</h1>
 
+<!-- <%= @projects %> -->
 <% @projects.each do |x|  %>
-	<p><%= x.id %></p>
-	<p><%= x.name %></p>
-	<%= x.description %>
-	<%= x.created_at %>
+	<ul>ID: <%= x.id %> 
+		<li>Name: <%= x.name %></li>
+		<li>Description: <%= x.description %></li>
+		<li><%= x.created_at %></li>
+	</ul>
 <% end %>

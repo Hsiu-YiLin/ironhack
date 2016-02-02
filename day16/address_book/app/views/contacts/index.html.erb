@@ -1,4 +1,7 @@
-<h1> Test </h1>
-<%= @contacts %>
-<h1> Test </h1>
-
+<h1> Current listing in address book </h1>
+<% @contacts.each do |x| %>
+	<%= x.name %>
+	<%= x.address %>
+	<%= x.phone_number %>
+	<%= x.email %>
+<% end %>

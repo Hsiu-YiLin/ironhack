@@ -13,6 +13,6 @@
 
 10.times do|x|
 	p= Project.create name: "Test#{x}", description: "TestDescription#{x}"
-	p.entries.create(minutes: 10+x, hours: 10+x)
+	p.entries.create(minutes: 10+x, hours: 10+x, date: x+1.month.ago )
 end
 	

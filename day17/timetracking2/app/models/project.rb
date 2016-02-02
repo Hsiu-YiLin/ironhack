@@ -8,6 +8,18 @@ class Project < ActiveRecord::Base
 	def self.last_created_projects(num)
 		date = Date.current
 		where("created_at >  ? ",date).limit(num)
+	end
+
+	def total_hour_in_month(month,year)
+		sum = 0
+		min = 0
+		current_month = Date.new(year, month)
+		entries.where(date: current_month.beginning_of_month..current_month.end_of_month) each {|entry| 
+			sum += entry.hours
+			mint += entry.minutes
+		}
+		minhour = min/60
+		sum += minhour
 
 	end
 end

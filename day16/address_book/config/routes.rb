@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get "/" => "site#home"
   get "/contacts" => "contacts#index"
   get "/contacts/new" => "contacts#new"
+=======
+  get "/contacts" => "contacts#index"
+>>>>>>> a7be304503e3fb57d89bf98492dbac485d899dd7
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,7 +1,15 @@
 class ContactsController < ApplicationController
 	def index
-	@contacts = Contact.all
+	contact_all = Contact.all
+
+
+	@contacts = contact_all.sort{ |x,y| x.name <=> y.name }
+
 	render "index"
+	end
+
+	def sorting
+		
 	end
 
 	def new
@@ -17,5 +25,6 @@ class ContactsController < ApplicationController
 	      )
         contact.save
         redirect_to("/")
+
 	end
 end

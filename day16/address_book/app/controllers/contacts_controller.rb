@@ -9,8 +9,13 @@ class ContactsController < ApplicationController
 	end
 
 	def create
-		render(:text => "This route is contacts#create.")
-
+        contact = Contact.new(
+	      :name => params[:contact][:name],
+	      :address => params[:contact][:address],
+	      :phone_number => params[:contact][:phone],
+	      :email => params[:contact][:email]
+	      )
+        contact.save
+        redirect_to("/")
 	end
-
 end

@@ -1,7 +1,14 @@
 <h1> Current listing in address book </h1>
-<% @contacts.each do |x| %>
-	<%= x.name %>
-	<%= x.address %>
-	<%= x.phone_number %>
-	<%= x.email %>
-<% end %>
+<ul>
+
+	
+		<% @contacts.each do |x| %>
+		<li><%= x.name %>
+			<!-- Address: <%= x.address %> <br> 
+			Number: <%= x.phone_number %> <br>
+			Email: <%= x.email %></p> -->
+		</li>
+		<% end %>
+</ul>
+
+<a href="/new">Add a new contact</a>

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  get "/" => "site#home"
-  get "/contacts" => "contacts#index"
+  get "/" => "contacts#index"
   get "/contacts/new" => "contacts#new"
 
   # The priority is based upon order of creation: first created -> highest priority.

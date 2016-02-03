@@ -1,16 +1,10 @@
 Rails.application.routes.draw do
   get "/" => "users#home"
-
   get "/users/new" => "users#new"
-
   post "/create" => "users#create"
-
   get "/users/:id" => "users#show"
-
   get "/products" => "products#index"
-
   get "/products/new" => "products#new"
-
   post "/create_product" => "products#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -8,9 +8,7 @@ class ContactsController < ApplicationController
 	render "index"
 	end
 
-	def sorting
-		
-	end
+
 
 	def new
 		render "new"

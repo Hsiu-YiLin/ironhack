@@ -3,7 +3,8 @@
 
 	
 		<% @contacts.each do |x| %>
-		<li><%= x.name %>
+
+		<li><a href="/:x.id"><%= x.name %></a>
 			<!-- Address: <%= x.address %> <br> 
 			Number: <%= x.phone_number %> <br>
 			Email: <%= x.email %></p> -->

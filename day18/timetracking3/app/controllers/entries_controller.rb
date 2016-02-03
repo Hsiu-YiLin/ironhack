@@ -4,7 +4,19 @@ class EntriesController < ApplicationController
 		# Entry.where(project_id: params[:id])
 	end
 
-	def new
+	def create
 		@project = Project.find params[:project_id]
-		@entry = Project.entries.new
+		@entry = Project.entries.new entry_params
+		if @entry.save
+			redirect_to action: "index", controller: "entries", project_id: @project.id
+		else
+			render "new"
+		end
+	end
+
+	def entry_params
+			params.require(:entry).permit(:hours, :minutes, :date)
+		end
+	end
+
 end

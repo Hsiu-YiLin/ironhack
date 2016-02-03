@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
 
 	def create
 		@project = Project.find params[:project_id]
-		@entry = Project.entries.new entry_params
+		@entry = @project.entries.new(entry_params)
 		if @entry.save
 			redirect_to action: "index", controller: "entries", project_id: @project.id
 		else
@@ -15,8 +15,21 @@ class EntriesController < ApplicationController
 	end
 
 	def entry_params
-			params.require(:entry).permit(:hours, :minutes, :date)
+			params.requ	ire(:entry).permit(:hours, :minutes, :date)
 		end
+	end
+
+	def edit
+		@project= project.find(params[:params_id])
+		@entry= @project.entries.find(id: params[:id])
+	end
+
+	def update
+		@project= Project.find(params[:params_id])
+		@entry= @project.entries.find(params[:id])
+		@entry.update.attributes(entry_params)
+		redirect_to project_entries_path(@project)
+
 	end
 
 end

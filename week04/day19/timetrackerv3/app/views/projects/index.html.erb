@@ -1,0 +1,9 @@
+<ul>
+  <% @projects.each do |p| %>
+    <li>
+      <p><%= "ID [#{p.id}] - Name #{p.name}" %></p>
+      <%= link_to p.name, project_entries_path(p) %>
+    </li>
+  <% end %>
+</ul>
+

@@ -1,9 +1,14 @@
 class ProductsController < ApplicationController
 	def index
-		@products = Product.all
+		#Changed to association by user.
+		# @user = User.find_by(id: params[:user_id])
+		# @products = @user.products.all
+
+		# 
 	end
 
 	def show
+
 	end
 
 	def create
@@ -11,7 +16,7 @@ class ProductsController < ApplicationController
 		description = params[:description]
 		deadline = params[:deadline]
 
-		product = Product.create(title: title, description: description, deadline: deadline)
+		product = User.produckts.create(title: title, description: description, deadline: deadline)
 
 		redirect_to("/products")
 	end

@@ -1,0 +1,14 @@
+<%= form_for [@project, @entry] do |f| %>
+  <%= f.label :hours %>
+  <%= f.text_field :hours %>
+  <br>
+  <%= f.label :minutes %>
+  <%= f.text_field :minutes %>
+  <br>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <br>
+
+  <%= f.submit "Save" %>
+  <%= link_to "Cancel", project_entries_path(@project) %>
+<% end %>

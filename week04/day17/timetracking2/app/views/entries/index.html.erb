@@ -1,0 +1,12 @@
+<h1> Test from ENTRIES </h1>
+<%= @project %>
+<ul>
+<% @project.entries.each do |x| %>
+	<li>
+
+	<%= x.hours %>
+	<%= x.minutes %>
+
+	</li>
+</ul>
+<% end %>

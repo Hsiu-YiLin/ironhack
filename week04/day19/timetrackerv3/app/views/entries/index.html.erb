@@ -1,0 +1,10 @@
+<h1><%= @project.name %></h1>
+<ul>
+  <% @project.entries.each do |e| %>
+    <li><%= "#{e.hours} #{e.minutes}" %></li>
+  <% end %>
+</ul>
+
+<%= link_to("Projects", projects_path) %>
+<%= link_to("New Entry", new_project_entry_path(@project)) %>
+

@@ -6,9 +6,10 @@
 	<%= concert.artist %> <br>
 	<%= concert.city %> <br>
 	<%= concert.date %> <br>
-	<%= concert.price %> <br>
+	
 	<%= link_to("More Information", concert_path(concert.id)) %> <br>
 	<%= link_to("Edit", edit_concert_path(concert.id)) %>
+	<br>
 	</li>
 <% end %>
 </ul>

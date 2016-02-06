@@ -1,7 +1,23 @@
 <h1> Welcome to the Music Concert Network </h1>
 
+<h2> What's happening today: </h2>
+
 <ul>
-<% @concerts.each do |concert| %>
+<% @concerts_today.each do |concert| %>
+	<li>
+	<%= concert.artist %> <br>
+	<%= concert.city %> <br>
+	<%= concert.date %> <br>
+	
+	<%= link_to("More Information", concert_path(concert.id)) %> <br>
+	<%= link_to("Edit", edit_concert_path(concert.id)) %>
+	</li>
+<% end %>
+</ul>
+
+<h2> What's happening later this month: </h2>
+<ul>
+<% @concerts_latermonth.each do |concert| %>
 	<li>
 	<%= concert.artist %> <br>
 	<%= concert.city %> <br>

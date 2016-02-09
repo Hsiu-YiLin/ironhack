@@ -1,8 +1,11 @@
 // Write your Pizza Builder JavaScript in this file.
 $(document).ready(function(){
+	
+	var total = 10;
 	$(".btn-pepperonni.active").on("click", function(){
 		$(".pep").toggle();
 		$(".btn-pepperonni").toggleClass("active");
+		$(".pep-price").toggle();
 	});
 
 	$(".btn-mushrooms").on("click", function(){
@@ -24,9 +27,4 @@ $(document).ready(function(){
 		$(".sauce").toggleClass("sauce-white");
 		$(".btn-sauce").toggleClass(" active ");
 	});
-
-	
-
-
-	
 });

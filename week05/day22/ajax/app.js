@@ -6,8 +6,38 @@ $(document).on("ready", function() {
 	$(".js-add-kylo").on("click", function(){
 		publishKylo();
 	});
+
+	$('.js-character-form-submit').on('click', onSubmit());
 });
 
+function onSubmit (event) {
+	
+	event.preventDefault();
+	console.debug('SUBMITTED');
+	
+
+	var newCharacter = {
+		name: $("#name").val(),
+		occupation: $("#occupation").val(),
+		weapon: $("#weapon").val()
+	};
+	
+	$.ajax({
+		type: "POST",
+
+		url: "https://ironhack-characters.herokuapp.com/characters",
+
+		data: newCharacter,
+
+		success: function(){
+			alert("New Character Added");
+		},
+
+		error: function(){
+			alert("What?");
+		}
+	});
+}
 
 function fetchCharacters(){
 	$.ajax({
@@ -53,12 +83,10 @@ function publishKylo (){
 
 		success: function(){
 			alert("Great");
-
 		},
 
 		error: function(){
 			alert("What?");
-
 		}
 	});
 } 

@@ -7,7 +7,7 @@ $(document).on("ready", function() {
 		publishKylo();
 	});
 
-	$('.js-character-form-submit').on('click', onSubmit());
+	$('.js-character-form-submit').on('click', onSubmit);
 });
 
 function onSubmit (event) {

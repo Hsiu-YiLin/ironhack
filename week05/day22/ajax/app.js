@@ -38,7 +38,12 @@ function displayCharacters (characters) {
 }
 
 function publishKylo (){
-	var newCharacter;
+	var newCharacter = {
+		name: "Kyle",
+		occupation: "Great guy",
+		weapon: "Shoes"
+	};
+	
 	$.ajax({
 		type: "POST",
 

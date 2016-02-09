@@ -25,14 +25,16 @@ function onSubmit (event) {
 
 function displayArtistImage (artistresult){
 	artistresult.forEach(function(artist){
-		console.log(artist.images.);
+		var picture = "public/nopicture.png";
+		if (typeof artist.images[0] !== "undefined") {
+			picture = artist.images[0].url;
+		}
 		var html = `
 		<li>
 		${artist.name}
-		
-
+		<img class="artist-picture" src="${picture}">
 		</li>
 		`;
-		$(".artist-display").append(html);
+		$(".js-artist-display").append(html);
 	});
 }

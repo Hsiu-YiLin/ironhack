@@ -1,9 +1,10 @@
 if("geolocation" in navigator) {
-	getUserLocation();
+	var button = $('#where-am-i');
+	button.on('click', getUserLocation());
 }
 
 else {
-	console.log("You are good at hiding");
+	alert("You are good at hiding");
 }
 
 var options ={
@@ -17,14 +18,18 @@ function getUserLocation(){
 function successCallback (position) {
 	console.log("SUCCESS!!");
 	console.log(position);
-	console.log("Lat", position.coords.latitude);
-	console.log("Long", position.coords.longitude);
+
+	$(".js-lat-value").text(position.coords.latitude);
+	$(".js-lng-value").text(position.coords.longitude);
+
+	var img = `<img src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitude}&zoom=13&size=300x300&sensor=false">`;
+    
+    $(".google-map").append(img);
 };
 
 function errorCallback (error) {
 	console.log("Error", error);
 };
 
-$(".js-lat-value").text(position.coords.latitude);
-$(".js-lng-value").text(postition.coords.longitude);
+
 

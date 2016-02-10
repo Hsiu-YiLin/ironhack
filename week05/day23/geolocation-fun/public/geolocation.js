@@ -14,6 +14,7 @@ function onLocation(position){
   };
 
   createMap(myPosition);
+  setupAutocomplete();
 }
 
 function onError(err){
@@ -23,6 +24,31 @@ function onError(err){
 function createMap(position){
   map = new google.maps.Map($('#map')[0], {
     center: position,
-    zoom: 17
+    zoom: 15
+  });
+  createMarker(position);
+}
+
+function createMarker(position){
+  var marker = new google.maps.Marker({
+    position: position,
+    map: map
+    });
+}
+
+function setupAutocomplete(){
+  var input = $("#get-places")[0];
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.addListener("place_changed", function(){
+    var place = autocomplete.getPlace();
+    if (place.geometry.location) {
+      map.setCenter(place.geometry.location);
+      map.setZoom(18);
+      createMarker(place.geometry.location);      
+    } else {
+      alert("Uhhh...where is this place?")
+    }
+    
   });
 }
+

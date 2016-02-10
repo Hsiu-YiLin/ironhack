@@ -24,7 +24,7 @@ function successCallback (position) {
 
 	var img = `<img src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitude}&zoom=13&size=300x300&sensor=false">`;
     
-    $(".google-map").append(img);
+    $(".js-google-map").append(img);
 };
 
 function errorCallback (error) {

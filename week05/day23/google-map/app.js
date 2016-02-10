@@ -22,7 +22,7 @@ function successCallback (position) {
 	$(".js-lat-value").text(position.coords.latitude);
 	$(".js-lng-value").text(position.coords.longitude);
 
-	var img = `<img src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitude}&zoom=13&size=300x300&sensor=false">`;
+	var img = `<img src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitude}&zoom=13&size=300x300&sensor=false&key=AIzaSyCBJ2oHA9o2uPv0nnkWd_SQ5dwAwzOearU">`;
     
     $(".js-google-map").append(img);
 };

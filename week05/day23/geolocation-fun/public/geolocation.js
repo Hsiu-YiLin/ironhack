@@ -1,5 +1,9 @@
 var map;
 
+var retrievedLocations = localStorage.getItem("saved_locations");
+  console.log(JSON.parse(retrievedLocations));
+
+
 if ("geolocation" in navigator){
   navigator.geolocation.getCurrentPosition(onLocation, onError);
 }
@@ -34,6 +38,7 @@ function createMarker(position){
     position: position,
     map: map
     });
+  window.localStorage.setItem("saved_locations", JSON.stringify(position));
 }
 
 function setupAutocomplete(){

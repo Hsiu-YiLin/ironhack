@@ -19,6 +19,7 @@ function onLocation(position){
 
   createMap(myPosition);
   setupAutocomplete();
+  //loadMarkersfromlocalStorage
 }
 
 function onError(err){
@@ -38,7 +39,7 @@ function createMarker(position){
     position: position,
     map: map
     });
-  window.localStorage.setItem("saved_locations", JSON.stringify(position));
+  // window.localStorage.setItem("saved_locations", JSON.stringify(position));
 }
 
 function setupAutocomplete(){

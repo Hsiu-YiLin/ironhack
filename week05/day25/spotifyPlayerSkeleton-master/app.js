@@ -1,6 +1,5 @@
 $(document).on("ready", function() {
-	$('.js-track-form-submit').on("click", tracksubmit);
-	// $('.js-player').trigger('pause');
+	$('.js-track-form-submit').on("click", tracksubmit);	
 });
 
 function tracksubmit(event){
@@ -55,10 +54,13 @@ function displayAlbum(trackinfo){
 function buttonSwitch(){
 	$('.btn-play').on("click", function(){
 
-		$(".btn-play").toggleClass("playing",true);
-		$('.js-player').trigger('play');
-		// $('.js-player').trigger('pause');
+		if($(".btn-play").hasClass("playing")){
+			$(".btn-play").toggleClass("playing",false);
+			$('.js-player').trigger('pause');
+		}
+		else{
+			$(".btn-play").toggleClass("playing",true);
+			$('.js-player').trigger('play');
+		};
 	});
-
-
 }

@@ -11,7 +11,6 @@ $(document).on("ready",function(){
 	}); 
 });
 
-
 PokemonApp.Pokemon = function (pokemonUri) {
 	this.id = PokemonApp.Pokemon.idFromUri(pokemonUri);
 };
@@ -29,8 +28,8 @@ PokemonApp.Pokemon.prototype.render = function(){
 			var type ="";
 			(self.info.types).forEach(function(onetype){
 				type = type + onetype.name + " ";
-				console.log(onetype);
-				console.log(onetype.name);
+				// console.log(onetype);
+				// console.log(onetype.name);
 			});
 			
 			$(".js-pkmn-name").text(self.info.name);
@@ -51,11 +50,48 @@ PokemonApp.Pokemon.prototype.render = function(){
 			alert("What!");
 		}
 	});
+	// Add sprite to header to left
+	$.ajax({
+		url: '/api/pokemon/'+this.id,
+		success: function(response){
+			self.info = response,
+			imghtml=`<img src="http://pokeapi.co/media/img/${self.info.pkdx_id}.png">`,
+			$(".js-pkmn-image").html(imghtml)
+		},
+		error: function(){
+			alert("Image failed!");
+		
+		}
+	});
+
+	// Add pokemon description to body float right
+	$.ajax({
+		url: 'description/'+this.id,
+		success: function(response){
+			self.info = response
+			// descriptionarraylength = self.info.descriptions.length,
+			// console.log(descriptionarraylength),
+			// $(".js-pkmn-description").text(self.info.weight);
+		},
+		error: function(){
+			alert("Description failed!");
+		}
+	});
+
 };
 
 PokemonApp.Pokemon.idFromUri = function(pokemonUri){
 	var uriSegments = pokemonUri.split("/");
 	var secondLast = uriSegments.length-2;
 	return uriSegments[secondLast];
+};
+
+PokemonApp.PokemonEvolutions = function(id,info) {
+	this.id = id;
+	this.info = info;
+};
+
+PokemonApp.PokemonEvolutions.prototype.render = function(){
+	console.log("Rendering evolutions for: #"+ this.id);
 };
 

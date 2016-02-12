@@ -1,5 +1,8 @@
 $(document).on("ready", function() {
-	$('.js-track-form-submit').on("click", tracksubmit);	
+	$('.js-track-form-submit').on("click", tracksubmit);
+	$(".progressbar").attr("value", 0);	
+	$('.js-player').on('timeupdate', printTime);
+
 });
 
 function tracksubmit(event){
@@ -22,10 +25,9 @@ function tracksubmit(event){
 			$(".js-player").attr("src", response.tracks.items[0].preview_url+".mp3");
 		},
 		error: function(){
-			console.log("Error search");
+			console.log("Search error");
 		}
 	});
-	// $(".disabled").toggleClass("playing");
 };
 
 function displayTrack(trackinfo){
@@ -50,10 +52,8 @@ function displayAlbum(trackinfo){
 	$(".cover").html(htmlart);
 };
 
-
 function buttonSwitch(){
 	$('.btn-play').on("click", function(){
-
 		if($(".btn-play").hasClass("playing")){
 			$(".btn-play").toggleClass("playing",false);
 			$('.js-player').trigger('pause');
@@ -63,4 +63,10 @@ function buttonSwitch(){
 			$('.js-player').trigger('play');
 		};
 	});
+};
+
+function printTime () {
+  var current = $('.js-player').prop('currentTime');
+  $(".progressbar").attr("value", current); 
+  console.debug('Current time: ' + current);
 }

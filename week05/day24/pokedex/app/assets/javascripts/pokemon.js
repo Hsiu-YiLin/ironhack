@@ -93,5 +93,30 @@ PokemonApp.PokemonEvolutions = function(id,info) {
 
 PokemonApp.PokemonEvolutions.prototype.render = function(){
 	console.log("Rendering evolutions for: #"+ this.id);
+	this.info.evolutions.forEach(function (ev){
+		$.ajax({
+			url: ev.resource_uri,
+			success: function(response){
+				console.log("Got evolution", ev.to);
+				console.log(response);
+			}
+		});
+
+	});
 };
 
+
+$(document).on("ready", function(){
+	$(".js-evolutions").on("click", function(event)){
+		var $button = $(event.currentTarget);
+		var pokemonId = $button.data("pkmn-id");
+
+		$.ajax({
+			url: '/api/pokemon/${pokemonId}',
+			success: function(response){
+				var evolutions = new 
+			}
+		})
+	}
+
+});

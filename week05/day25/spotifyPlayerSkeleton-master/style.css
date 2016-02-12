@@ -4,6 +4,15 @@
   border-radius: 5px;
   overflow: hidden;
   display: block;
+
+}
+
+.search-form {
+  text-align: center;
+  width: 400px;
+  margin: 10px auto 0;
+  position: relative;
+  align-content: center;
 }
 
 .header {

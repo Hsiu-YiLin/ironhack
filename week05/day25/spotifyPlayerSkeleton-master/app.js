@@ -2,6 +2,8 @@ $(document).on("ready", function() {
 	$('.js-track-form-submit').on("click", tracksubmit);
 	$(".progressbar").attr("value", 0);	
 	$('.js-player').on('timeupdate', printTime);
+	$('.js-modal').modal("show");
+
 
 });
 
@@ -70,3 +72,5 @@ function printTime () {
   $(".progressbar").attr("value", current); 
   console.debug('Current time: ' + current);
 }
+
+

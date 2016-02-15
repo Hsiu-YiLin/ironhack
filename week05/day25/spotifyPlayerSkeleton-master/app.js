@@ -3,6 +3,7 @@ $(document).on("ready", function() {
 	$(".progressbar").attr("value", 0);	
 	$('.js-player').on('timeupdate', printTime);
 	$('.js-modal').modal("show");
+	
 
 
 });
@@ -30,6 +31,8 @@ function tracksubmit(event){
 			console.log("Search error");
 		}
 	});
+
+	$('.js-modal').modal("show");
 };
 
 function displayTrack(trackinfo){
@@ -64,6 +67,7 @@ function buttonSwitch(){
 			$(".btn-play").toggleClass("playing",true);
 			$('.js-player').trigger('play');
 		};
+		
 	});
 };
 

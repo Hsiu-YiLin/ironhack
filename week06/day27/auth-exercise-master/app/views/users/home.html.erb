@@ -2,5 +2,11 @@
 
   <%= link_to "Sign up", "/signup" %><br>
   <%= link_to "My profile", "/profile" %><br>
-  <%= link_to "All profiles", "/users" %>
+  <%= link_to "All profiles", "/users" %><br>
+  
+  <% if @current_user.nil? %> 
+  <%= link_to "Log in", "/login" %><br>
+  <% end %>
+  <%= link_to "Log out", "/logout", :method => :delete %><br>
 
+<a href="http://wwww.giggly.com">Go to Giggly.com</a>

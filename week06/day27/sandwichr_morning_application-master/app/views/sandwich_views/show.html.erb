@@ -1,0 +1,8 @@
+<h1> <%= @sandwich.name %> </h1>
+
+<h2> Ingredients </h2>
+<ul>
+<% @sandwich.ingredients.each do |i| %>
+	<li> <%= i.name %> </li>
+<% end %>
+</ul>

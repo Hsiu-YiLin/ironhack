@@ -4,6 +4,6 @@ class TournamentsController < ApplicationController
   end
 
   def display
-  	
+  	render tournamentsIndex
   end
 end

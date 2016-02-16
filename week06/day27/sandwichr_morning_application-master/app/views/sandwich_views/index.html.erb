@@ -1,0 +1,8 @@
+<h1> List of sandwiches, yum </h1>
+
+<% @sandwiches.each do |sandwich| %>
+	<ul>
+	<li><%= link_to sandwich.name, sandwich_path(sandwich) %> 
+	</li>
+	</ul>
+<% end %>
